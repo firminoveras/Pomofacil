@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomofácil: Iniciar</title>
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <img id='background-img' class="background-img">
+
+    <div class="div-title">
+        <div style="display: flex;">
+            <span class="material-symbols-rounded icon-middle"> timer </span>
+            <h2 style="margin-left: 10px;">Pomofácil</h2>
+        </div>
+    </div>
+
+    <div class="div-main" id="div-main">
+        <div class="div-clock">
+            <audio id="notificationAudio" src="./src/audio/notification.mp3" autostart="0" autostart="false" preload="none"></audio>
+            <span class="div-background-circle-one"></span>
+            <span class="div-background-circle-two"></span>
+            <span class="div-background-circle-three"></span>
+            <div class="div-clock-intern">
+                <div id="timerTitle" class="div-clock-item title">Pronto</div>
+                <div id="timerTime" class="div-clock-item time">25:00</div>
+                <div class="div-clock-item controls">
+                    <label id="controlPlay"> <span class="material-symbols-rounded icon-small">play_arrow</span>Começar</label>
+                    <label id="controlPause"> <span class="material-symbols-rounded icon-small">pause</span>Pausar</label>
+                    <label id="controlRestart"> <span class="material-symbols-rounded icon-small">undo</span>Renovar</label>
+                </div>
+            </div>
+
+            <div id="sessionDisplay" class="div-cicles">
+            </div>
+
+            <div id="div-settings">
+                <div style="display:flex; justify-content: center;">
+                    <span class="material-symbols-rounded icon-middle" style="display:flex; align-items: center; padding-bottom: 3px; margin-right: 10px;">settings</span>
+                    <h3>Configurações</h3>
+                </div>
+                <hr style="color: white;border-style: solid;">
+                <div class="settings-title">
+                    <span id="settingsPrevious" class="material-symbols-rounded icon-middle" style="display:flex; align-items: center;">chevron_left</span>
+                    <h4>Timer</h4>
+                    <span id="settingsNext" class="material-symbols-rounded icon-middle" style="display:flex; align-items: center;">chevron_right</span>
+                </div>
+                <div>
+                    <div class="minute-picker">
+                        <p class="minute-picker-title">Pomodoro</p>
+                        <label id="labelPomodoroTime" class="minute-picker-label"></label>
+                        <div class="minute-picker-buttons">
+                            <button id="btPomodoroTimeMinus">-</button>
+                            <button id="btPomodoroTimePlus">+</button>
+                        </div>
+                    </div>
+                    <div class="minute-picker">
+                        <p class="minute-picker-title">Pausa Curta</p>
+                        <label id="labelSmallIntervalTime" class="minute-picker-label"></label>
+                        <div class="minute-picker-buttons">
+                            <button id="btSmallIntervalTimeMinus">-</button>
+                            <button id="btSmallIntervalTimePlus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="minute-picker">
+                    <p class="minute-picker-title">Pausa Longa</p>
+                    <label id="labelBigIntervalTime" class="minute-picker-label"></label>
+                    <div class="minute-picker-buttons">
+                        <button id="btBigIntervalTimeMinus">-</button>
+                        <button id="btBigIntervalTimePlus">+</button>
+                    </div>
+                </div>
+                <div class="minute-picker">
+                    <p class="minute-picker-title">Sessões</p>
+                    <label id="labelSessionNumber" class="minute-picker-label" style="letter-spacing: 2px;"></label>
+                    <div class="minute-picker-buttons">
+                        <button id="btSessionMinus">-</button>
+                        <button id="btSessionPlus">+</button>
+                    </div>
+                </div>
+                <i style="color: white; font-size: 12px; text-align: center; display: block;" ;>As alterações serão aplicadas quando o timer estiver parado.</i>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-soundsBar" id="ambienceSounds-root">
+        <audio id="ambienceAudio" loop autoplay="false"></audio>
+        <span id="ambience-forest" class="material-symbols-rounded ambience-button icon-big">forest</span>
+        <span id="ambience-night" class="material-symbols-rounded ambience-button icon-big">partly_cloudy_night</span>
+        <span id="ambience-rain" class="material-symbols-rounded ambience-button icon-big">rainy</span>
+        <span id="ambience-coffe" class="material-symbols-rounded ambience-button icon-big">local_cafe</span>
+        <span id="ambience-ocean" class="material-symbols-rounded ambience-button icon-big">water</span>
+    </div>
+
+    <div class="div-settingsBar">
+        <span id="button-settings" class="material-symbols-rounded ic-settings icon-big">settings</span>
+    </div>
+
+    <script src="./src/js/ambienceSounds.js" type="text/javascript"></script>
+    <script src="./src/js/main.js" type="text/javascript"></script>
+</body>
+
+</html>

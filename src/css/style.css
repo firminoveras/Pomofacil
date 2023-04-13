@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+:root {
+    --bg: 10, 135, 200;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.icon-small {
+    font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    user-select: none;
+    font-size: 24px;
+}
+
+.icon-small-nofill {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    user-select: none;
+    font-size: 24px;
+}
+
+.icon-middle {
+    font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 40;
+    user-select: none;
+    color: white;
+    font-size: 30px;
+}
+
+.icon-big {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
+    user-select: none;
+    font-size: 40px;
+}
+
+/* |====> Main Divs <======================================================================| */
+
+.div-main {
+    background: radial-gradient(ellipse at center, #ffffff00 0%, #ffffff00 60%, rgba(var(--bg), 0.5) 100%);
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-x: hidden;
+}
+
+.div-title {
+    box-sizing: border-box;
+    top: 15px;
+    background: rgb(var(--bg));
+    position: absolute;
+    border-radius: 25px;
+    width: fit-content;
+    opacity: .93;
+    padding: 10px 20px;
+    height: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.1) 0px 8px 16px -8px;
+}
+
+.div-title h2 {
+    font-family: 'Pacifico';
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin: 0;
+    font-weight: 100;
+    font-size: 30px;
+}
+
+/* |====> Settings Div <======================================================================| */
+
+.div-settingsBar {
+    box-sizing: border-box;
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 60px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.ic-settings {
+    color: rgb(var(--bg));
+    opacity: 60%;
+    display: block;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 40px 0px 0px 40px;
+    transition: all 300ms ease;
+    padding: 5px 10px 5px 10px;
+}
+
+.ic-settings:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.ic-settings.selected {
+    background: rgb(var(--bg));
+    color: white;
+    opacity: 100%;
+}
+
+#div-settings {
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: rgba(var(--bg), 0.6);
+    border-radius: 20px;
+    width: 480px;
+    padding: 20px;
+    height: fit-content;
+    backdrop-filter: blur(8px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.1) 0px 8px 16px -8px;
+    transition: all 300ms ease;
+    transform: translateY(-100vh);
+}
+
+#div-settings.expand {
+    transform: translateY(0);
+}
+
+#div-settings h3 {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#div-settings h4 {
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+#div-settings .settings-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#settingsPrevious,
+#settingsNext {
+    transition: all 100ms ease;
+    transform: scale(100%);
+}
+
+#settingsPrevious:hover,
+#settingsNext:hover {
+    transform: scale(120%);
+}
+
+#settingsPrevious:active,
+#settingsNext:active {
+    transform: scale(90%);
+}
+
+.minute-picker {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.minute-picker .minute-picker-title {
+    box-sizing: border-box;
+    color: white;
+    display: inline-flex;
+    background: rgb(var(--bg));
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 12px;
+    justify-content: center;
+    height: 30px;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 30px;
+    justify-content: center;
+    margin: 5px;
+}
+
+.minute-picker .minute-picker-label {
+    box-sizing: border-box;
+    color: rgb(var(--bg));
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.minute-picker .minute-picker-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.minute-picker button {
+    box-sizing: border-box;
+    padding: 0;
+    border-style: none;
+    margin: 5px;
+    background: transparent;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    color: rgb(var(--bg));
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all 200ms ease;
+}
+
+.minute-picker button:hover {
+    background: rgb(var(--bg));
+    color: white;
+}
+
+.minute-picker button:active {
+    background: rgba(var(--bg), .5);
+    color: white;
+}
+
+
+@media (max-width: 800px) {
+    .div-settingsBar {
+        height: 80px;
+    }
+}
+
+/* |====> Sound Div <======================================================================| */
+
+.div-soundsBar {
+    left: 0;
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 60px;
+    transition: all 300ms ease;
+    overflow: hidden;
+}
+
+.div-soundsBar.hide {
+    transform: translateX(-60px);
+}
+
+.background-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .1;
+    object-fit: cover;
+    transition: all 1s ease;
+}
+
+.background-img.changed {
+    opacity: 0;
+}
+
+.ambience-button {
+    color: rgb(var(--bg));
+    font-size: 40px;
+    opacity: 60%;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 0px 40px 40px 0px;
+    transition: all 300ms ease;
+    padding: 5px 10px 5px 10px;
+}
+
+.ambience-button:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.ambience-button.selected {
+    background: rgb(var(--bg));
+    color: white;
+    opacity: 100%;
+}
+
+@media (max-width: 800px) {
+    .div-soundsBar {
+        flex-direction: row;
+        height: 60px;
+        width: 100vw;
+        bottom: 0;
+        align-items: start;
+    }
+
+    .div-soundsBar.hide {
+        height: 0;
+        transform: none;
+    }
+
+    .ambience-button {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 5px;
+        margin-left: 5px;
+        border-radius: 40px 40px 0px 0px;
+        transition: all 300ms ease;
+        padding: 10px 5px 10px 5px;
+    }
+
+}
+
+/* |====> Timer <======================================================================| */
+
+.div-clock {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.div-clock-intern {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.1) 0px 8px 16px -8px;
+    background: white;
+}
+
+.div-clock-item {
+    width: 300px;
+    height: 100px;
+    user-select: none;
+}
+
+.title {
+    text-align: center;
+    line-height: 175px;
+    font-size: 40px;
+    font-weight: 200;
+    color: rgb(var(--bg));
+    filter: brightness(90%);
+}
+
+.time {
+    text-align: center;
+    line-height: 115px;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgb(var(--bg));
+    filter: brightness(86%);
+    transition: all 200ms ease;
+}
+
+.time:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+.controls {
+    color: rgb(var(--bg));
+    filter: brightness(82%);
+    width: fit-content;
+    padding-bottom: 20px;
+
+}
+
+.controls span {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.controls label {
+    font-size: 15px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@keyframes circles-anim {
+    from {
+        transform: scale(100%);
+    }
+
+    to {
+        transform: scale(104%);
+    }
+}
+
+.div-background-circle-one,
+.div-background-circle-two,
+.div-background-circle-three {
+    position: absolute;
+    background: rgb(var(--bg));
+    border-radius: 999px;
+    opacity: .4;
+    animation-name: circles-anim;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.div-background-circle-one {
+    height: 450px;
+    width: 450px;
+    animation-duration: 1s;
+}
+
+.div-background-circle-two {
+    height: 400px;
+    width: 400px;
+    animation-duration: 1.1s;
+}
+
+.div-background-circle-three {
+    height: 350px;
+    width: 350px;
+    animation-duration: 1.2s;
+}
+
+.div-cicles {
+    position: absolute;
+    height: 24px;
+    min-width: 200px;
+    margin-top: 550px;
+    border-radius: 40px;
+    backdrop-filter: blur(8px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(var(--bg), 0.6);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
